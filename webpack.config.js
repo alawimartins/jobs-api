@@ -42,6 +42,11 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    alias: {
+      "@assets": __dirname + '/src/assets/'
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: __dirname + '/src/index.html',
