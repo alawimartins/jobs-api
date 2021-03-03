@@ -5,7 +5,7 @@ import { white, veryDarkBlue, midnight } from "../../utils/colors";
 export const SearchBox = styled.div`
   position: relative;
   width: 500px;
-  height: 60px;
+  height: 80px;
 `;
 
 export const SearchInput = styled.input`
@@ -17,15 +17,17 @@ export const SearchInput = styled.input`
 	top: 0;
 	left: 0;
 	width: 100%;
-  height: 80px;
+  height: 100%;
   font-size: 18px;
-  padding-left: 80px;
+  padding-left: 50px;
   background-color: ${props => (props.theme === "light" ? white : veryDarkBlue)};
 `;
 
 export const SearchIcon = styled.img`
   position: absolute;
   top: 50%;
-  margin-left: 32px;
+  margin-left: 12px;
   z-index: 1;
+  transform: translate(0%, -50%);
+
 `;

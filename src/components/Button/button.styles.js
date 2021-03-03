@@ -1,20 +1,21 @@
 import styled, { css } from 'styled-components'
+import { violet, lightViolet, darkGrey, white } from "../../utils/colors";
 
 export const Button = styled.button`
-  background: #e8eafa;
+  background: ${violet};
   border-radius: 3px;
   border: none;
-  color: #5761f7;
+  color: white;
   margin: 0.5em 1em;
   padding: 15px 40px;
   cursor: pointer;
-  &:hover { background: #c0c5f0;
+  :hover { background: ${lightViolet};
   }
 
   ${props => props.primary && css`
-    background: #6871ed;
-    color: white;
-    &:hover{ background: #939BF4;
+    background: ${props => (props.theme === "light" ? '#e8eafa' : darkGrey)};
+    color: ${props => (props.theme === "light" ? violet : white)};
+    :hover { background-color: ${props => (props.theme === "light" ? '#D4D7FF' : '#ccc')};
     }
   `}
 `;
