@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import StyledTheme from "./global-style";
-import Button1 from "./components/Button1/Button1";
 import ToggleSwitch from "./components/ToggleSwitch/ToggleSwitch.jsx";
+import SearchArea from "./components/SearchArea/SearchArea.jsx";
 import breakpoint from './utils/breakpoints';
 import xsHeader from './assets/mobile/bg-pattern-header.svg';
 import smHeader from './assets/tablet/bg-pattern-header.svg';
 import lgHeader from './assets/desktop/bg-pattern-header.svg';
 import logo from './assets/desktop/logo.svg'
+import CheckBox from "./components/ToggleSwitch/toggleSwitch.styles";
 
 const theme = "light";
 export const ThemeContext = React.createContext(theme);
@@ -49,20 +50,8 @@ class App extends Component {
         <Wrapper>
           <img src={logo} />
           <ToggleSwitch checked={this.state.checked} onChange={this.toggleTheme.bind(this)} />
-          <Button1 className="primary">Primary</Button1>
-          <Button1 className="secondary">Secondary</Button1>
-          <Button1 className="warn">Warning</Button1>
-          <Button1 className="disabled">Disabled</Button1>
-          <Button1 className="primary">Primary</Button1>
-          <Button1 className="secondary">Secondary</Button1>
-          <Button1 className="warn">Warning</Button1>
-          <Button1 className="disabled">Disabled</Button1>
-          <Button1 className="primary">Primary</Button1>
-          <Button1 className="secondary">Secondary</Button1>
-          <Button1 className="warn">Warning</Button1>
-          <Button1 className="disabled">Disabled</Button1>
+          <SearchArea />
         </Wrapper>
-        <p>hello</p>
       </ThemeContext.Provider>
     );
   }
