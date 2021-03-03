@@ -1,23 +1,17 @@
 import React from 'react'
-import * as Styled from './checkBox.styles.js'
+import * as Styled from './checkBox.styles'
 
-export const Checkbox = ({ className, checked, onChange }) => {
-  const onCheckboxChange = (event) => {
-    onChange(event.target.checked)
-  }
+const Checkbox = ({ className, checked, ...props }) => {
 
   return (
-    <CheckboxContainer className={className}>
-      <HiddenCheckbox checked={checked} onChange={onCheckboxChange} />
-      <StyledCheckbox checked={checked}>
-        <Icon viewBox="0 0 24 24">
+    <Styled.CheckboxContainer className={className}>
+      <Styled.HiddenCheckbox checked={checked} {...props} />
+      <Styled.StyledCheckbox checked={checked}>
+        <Styled.Icon viewBox="0 0 24 24">
           <polyline points="20 6 9 17 4 12" />
-        </Icon>
-      </StyledCheckbox>
-    </CheckboxContainer>
+        </Styled.Icon>
+      </Styled.StyledCheckbox>
+    </Styled.CheckboxContainer>
   )
 }
-
-Checkbox.propTypes = {
-  checked: PropTypes.bool
-}
+export default Checkbox
