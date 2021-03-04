@@ -30,7 +30,7 @@ class SearchArea extends React.Component {
               />
               <span style={{ marginLeft: 8 }}>Full Time Only</span>
             </label>
-            <Button primary label="Search" />
+            <Button label="Search" />
           </Styled.SearchWrapper>
         }
       </ThemeContext.Consumer>
