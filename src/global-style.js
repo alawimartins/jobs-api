@@ -6,7 +6,10 @@ import { ThemeContext } from "./index";
 const GlobalStyle = createGlobalStyle`
   @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 
-  * { box-sizing: border-box; }
+  * { 
+    box-sizing: border-box;
+    align-self: center;
+  }
 
   body {
     background-color: ${props => (props.theme === "light" ? "#F4F6F8" : "#121721")};
