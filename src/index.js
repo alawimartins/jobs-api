@@ -9,13 +9,13 @@ import xsHeader from './assets/mobile/bg-pattern-header.svg';
 import smHeader from './assets/tablet/bg-pattern-header.svg';
 import lgHeader from './assets/desktop/bg-pattern-header.svg';
 import logo from './assets/desktop/logo.svg'
-import CheckBox from "./components/ToggleSwitch/toggleSwitch.styles";
 
 const theme = "light";
 export const ThemeContext = React.createContext(theme);
 
 const Wrapper = styled.div`
   background-repeat: repeat-x;
+  position: absolute;
   @media ${breakpoint.device.xs}{
     background-image: url(${xsHeader});
   }
@@ -25,6 +25,14 @@ const Wrapper = styled.div`
   @media ${breakpoint.device.lg}{
     background-image: url(${lgHeader});
   }
+`;
+const Elem = styled.div`
+  background-repeat: repeat-x;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 45px;
+  padding: 0 5%;
 `;
 
 class App extends Component {
@@ -48,8 +56,10 @@ class App extends Component {
       <ThemeContext.Provider value={this.state.theme}>
         <StyledTheme />
         <Wrapper>
-          <img src={logo} />
-          <ToggleSwitch checked={this.state.checked} onChange={this.toggleTheme.bind(this)} />
+          <Elem>
+            <img src={logo} />
+            <ToggleSwitch checked={this.state.checked} onChange={this.toggleTheme.bind(this)} />
+          </Elem>
           <SearchArea />
         </Wrapper>
       </ThemeContext.Provider>
