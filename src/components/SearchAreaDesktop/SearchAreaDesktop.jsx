@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import * as Styled from './searchArea.styles'
-import SearchBar from "./../SearchBar/SearchBar.jsx";
-import Checkbox from "./../CheckBox/Checkbox.jsx";
-import Button from "./../Button/Button.jsx";
+import * as Styled from './SearchAreaDesktop.styles'
+import SearchBar from "../SearchBar/SearchBar.jsx";
+import Checkbox from "../CheckBox/Checkbox.jsx";
+import Button from "../Button/Button.jsx";
 import { ThemeContext } from "../../index";
 import searchIcon from '../../assets/desktop/icon-search.svg'
 import locationIcon from '../../assets/desktop/icon-location.svg'

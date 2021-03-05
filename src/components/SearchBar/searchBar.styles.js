@@ -10,6 +10,7 @@ export const SearchBox = styled.div`
 
 export const SearchInput = styled.input`
   border: 0;
+  border-radius: 6px;
   border-left: 2px solid ${props => (props.theme === "light" ? lightGrey : midnight)};
   outline: none;
   color: #8b7d77;
@@ -19,7 +20,7 @@ export const SearchInput = styled.input`
 	width: 100%;
   height: 100%;
   font-size: 18px;
-  padding-left: ${props => (props.icon === "light" ? '50px' : '13px')};
+  padding-left: ${props => (props.icon ? '50px' : '13px')};
   background-color: ${props => (props.theme === "light" ? white : veryDarkBlue)};
 `;
 
