@@ -4,6 +4,7 @@ import styled from "styled-components";
 import StyledTheme from "./global-style";
 import ToggleSwitch from "./components/ToggleSwitch/ToggleSwitch.jsx";
 import SearchArea from "./components/SearchArea/SearchArea.jsx";
+import SearchAreaMobile from "./components/SearchAreaMobile/SearchAreaMobile.jsx";
 import breakpoint from './utils/breakpoints';
 import xsHeader from './assets/mobile/bg-pattern-header.svg';
 import smHeader from './assets/tablet/bg-pattern-header.svg';
@@ -15,6 +16,7 @@ export const ThemeContext = React.createContext(theme);
 
 const Wrapper = styled.div`
   background-repeat: repeat-x;
+  width: 100%;
   position: absolute;
   @media ${breakpoint.device.xs}{
     background-image: url(${xsHeader});
@@ -27,8 +29,6 @@ const Wrapper = styled.div`
   }
 `;
 const Elem = styled.div`
-  background-repeat: repeat-x;
-  width: 100%;
   justify-content: space-between;
   display: flex;
   margin-top: 45px;
@@ -60,7 +60,8 @@ class App extends Component {
             <img src={logo} />
             <ToggleSwitch checked={this.state.checked} onChange={this.toggleTheme.bind(this)} />
           </Elem>
-          <SearchArea />
+          {/* <SearchArea /> */}
+          <SearchAreaMobile />
         </Wrapper>
       </ThemeContext.Provider>
     );
