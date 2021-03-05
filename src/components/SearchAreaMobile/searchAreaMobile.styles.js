@@ -5,7 +5,7 @@ export const SearchWrapper = styled.div`
   width: 90%;
   margin: 38px auto;
   display:flex;
-  border-radius: 3px;
+  border-radius: 6px;
   height: 80px;
   background-color: ${props => (props.theme === "light" ? white : veryDarkBlue)};
 `;
@@ -21,7 +21,7 @@ export const Button = styled.button`
 
 export const ButtonSearch = styled.button`
   background: ${violet};
-  border-radius: 3px;
+  border-radius: 6px;
   border: none;
   margin: 0.5em 1em;
   padding: 13px 13px;
