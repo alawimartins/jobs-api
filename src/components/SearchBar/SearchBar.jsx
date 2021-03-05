@@ -7,13 +7,14 @@ const SearchBar = ({ onChange, icon, placeholder }) => {
   const onSearchBarChange = (event) => {
     onChange(event.target.checked)
   }
+  console.log('icon', icon)
   return (
     <>
       <ThemeContext.Consumer>
         {theme =>
           <Styled.SearchBox>
-            <Styled.SearchIcon src={icon} />
-            <Styled.SearchInput theme={theme} type="text" placeholder={placeholder} />
+            {icon && <Styled.SearchIcon src={icon} />}
+            <Styled.SearchInput theme={theme} type="text" placeholder={placeholder} icon={icon} />
           </Styled.SearchBox>
         }
       </ThemeContext.Consumer>

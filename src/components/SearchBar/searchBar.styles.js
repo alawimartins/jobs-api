@@ -19,7 +19,7 @@ export const SearchInput = styled.input`
 	width: 100%;
   height: 100%;
   font-size: 18px;
-  padding-left: 50px;
+  padding-left: ${props => (props.icon === "light" ? '50px' : '13px')};
   background-color: ${props => (props.theme === "light" ? white : veryDarkBlue)};
 `;
 
