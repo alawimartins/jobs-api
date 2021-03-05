@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import StyledTheme from "./global-style";
 import ToggleSwitch from "./components/ToggleSwitch/ToggleSwitch.jsx";
-import SearchArea from "./components/SearchArea/SearchArea.jsx";
-import SearchAreaMobile from "./components/SearchAreaMobile/SearchAreaMobile.jsx";
+import SearchAreaTemplate from "./components/SearchAreaTemplate/SearchAreaTemplate.jsx";
 import breakpoint from './utils/breakpoints';
 import xsHeader from './assets/mobile/bg-pattern-header.svg';
 import smHeader from './assets/tablet/bg-pattern-header.svg';
@@ -60,8 +59,7 @@ class App extends Component {
             <img src={logo} />
             <ToggleSwitch checked={this.state.checked} onChange={this.toggleTheme.bind(this)} />
           </Elem>
-          {/* <SearchArea /> */}
-          <SearchAreaMobile />
+          <SearchAreaTemplate />
         </Wrapper>
       </ThemeContext.Provider>
     );
