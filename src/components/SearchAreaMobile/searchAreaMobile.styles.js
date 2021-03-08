@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { violet, lightViolet, white, veryDarkBlue } from "../../utils/colors";
+import breakpoint from '../../utils/breakpoints';
 
 export const SearchWrapper = styled.div`
   width: 90%;
@@ -8,6 +9,9 @@ export const SearchWrapper = styled.div`
   border-radius: 6px;
   height: 80px;
   background-color: ${props => (props.theme === "light" ? white : veryDarkBlue)};
+  @media ${breakpoint.device.sm}{
+    display: none;
+  }
 `;
 
 export const Button = styled.button`
