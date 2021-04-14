@@ -8,6 +8,7 @@ export const Button = styled.button`
   color: white;
   margin: 0.5em 1em;
   padding: 15px 40px;
+  font-family: 'Kumbh Sans',sans-serif;
   cursor: pointer;
   :hover { background: ${lightViolet};
   }
