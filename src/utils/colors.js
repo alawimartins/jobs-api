@@ -5,5 +5,4 @@ export const midnight = "#121721";
 export const white = "#FFFFFF";
 export const lightGrey = "#F4F6F8";
 export const grey = "#9DAEC2";
-export const darkGrey = "#9DAEC2";
-
+export const darkGrey = "rgba(87, 87, 87,0.2)";
