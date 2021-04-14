@@ -10,7 +10,7 @@ const Button = ({ primary, label, ...props }) => {
         <Styled.Button
           primary={primary}
           theme={theme}
-        >{label}</Styled.Button>
+        ><b>{label}</b></Styled.Button>
       }
     </ThemeContext.Consumer>
   );
