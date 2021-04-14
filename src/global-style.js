@@ -2,22 +2,32 @@ import React, { Component } from "react";
 import { createGlobalStyle } from "styled-components";
 import { ThemeContext } from "./index";
 
-
 const GlobalStyle = createGlobalStyle`
-  @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
-
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
   * { 
     box-sizing: border-box;
-    align-self: center;
   }
 
   body {
     background-color: ${props => (props.theme === "light" ? "#F4F6F8" : "#121721")};
     color: ${props => (props.theme === "light" ? "black" : "white")};
-    font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    line-height: 1.4;
-    letter-spacing: 0.0167em;
+    font-family: 'Kumbh Sans', sans-serif;
     margin:0;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 14px;
   }
 `;
 
