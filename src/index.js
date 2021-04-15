@@ -6,6 +6,7 @@ import ToggleSwitch from "./components/ToggleSwitch/ToggleSwitch.jsx";
 import SearchAreaTemplate from "./components/SearchAreaTemplate/SearchAreaTemplate.jsx";
 import ContentPreview from "./components/ContentPreview/ContentPreview.jsx";
 import CompanyHeader from "./components/CompanyHeader/CompanyHeader.jsx";
+import HowToApply from "./components/HowToApply/HowToApply.jsx";
 import breakpoint from './utils/breakpoints';
 import xsHeader from './assets/mobile/bg-pattern-header.svg';
 import smHeader from './assets/tablet/bg-pattern-header.svg';
@@ -63,7 +64,8 @@ class App extends Component {
           </Elem>
           <SearchAreaTemplate />
           {/* <ContentPreview /> */}
-          <CompanyHeader />
+          {/* <CompanyHeader /> */}
+          <HowToApply />
         </Wrapper>
       </ThemeContext.Provider>
     );
