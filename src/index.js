@@ -1,12 +1,19 @@
 import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import StyledTheme from "./global-style";
 import ToggleSwitch from "./components/ToggleSwitch/ToggleSwitch.jsx";
-import SearchAreaTemplate from "./components/SearchAreaTemplate/SearchAreaTemplate.jsx";
+import JobDescriptionPage from "./components/JobDescriptionPage/JobDescriptionPage.jsx";
 import ContentPreview from "./components/ContentPreview/ContentPreview.jsx";
 import CompanyHeader from "./components/CompanyHeader/CompanyHeader.jsx";
 import HowToApply from "./components/HowToApply/HowToApply.jsx";
+import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import breakpoint from './utils/breakpoints';
 import xsHeader from './assets/mobile/bg-pattern-header.svg';
 import smHeader from './assets/tablet/bg-pattern-header.svg';
@@ -55,19 +62,30 @@ class App extends Component {
 
   render() {
     return (
-      <ThemeContext.Provider value={this.state.theme}>
-        <StyledTheme />
-        <Wrapper>
-          <Elem>
-            <img src={logo} />
-            <ToggleSwitch checked={this.state.checked} onChange={this.toggleTheme.bind(this)} />
-          </Elem>
-          <SearchAreaTemplate />
-          {/* <ContentPreview /> */}
-          {/* <CompanyHeader /> */}
-          <HowToApply />
-        </Wrapper>
-      </ThemeContext.Provider>
+      <Router basename='/'>
+        <ThemeContext.Provider value={this.state.theme}>
+          <StyledTheme />
+          <Wrapper>
+            <Elem>
+              <Link style={{ textDecoration: "none" }} to="/">
+                <img src={logo} />
+              </Link>
+              <ToggleSwitch checked={this.state.checked} onChange={this.toggleTheme.bind(this)} />
+            </Elem>
+            <div className="App">
+              <Switch>
+                <Route exact path="/">
+                  <LandingPage />
+                </Route>
+                <Route path="/jobs">
+                  <JobDescriptionPage />
+                </Route>
+              </Switch>
+
+            </div>
+          </Wrapper>
+        </ThemeContext.Provider>
+      </Router>
     );
   }
 }
