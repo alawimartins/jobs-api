@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   background-color: ${props => (props.theme === "light" ? "white" : veryDarkBlue)};
   padding: 10px 20px;
   background-image: url(${xsFooter});
+  margin: auto;
   @media ${breakpoint.device.sm}{
     background-image: url(${smFooter});
     flex-direction: row;

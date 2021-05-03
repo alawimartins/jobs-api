@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   align-items: center;
   background-color: ${props => (props.theme === "light" ? "white" : veryDarkBlue)};
   padding: 40px 30px 20px 20px;
+  margin: auto;
   @media ${breakpoint.device.sm}{
     flex-direction: row;
     min-height: 140px;

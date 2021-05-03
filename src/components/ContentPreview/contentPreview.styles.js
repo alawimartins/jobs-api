@@ -11,8 +11,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 30px 30px;
+  margin: auto;
   background-color: ${props => (props.theme === "light" ? "white" : veryDarkBlue)};
   @media ${breakpoint.device.sm}{
+    margin: 0;
     width: 339px;
     height: 228px;
   }
