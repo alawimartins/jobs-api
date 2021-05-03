@@ -19,7 +19,7 @@ export const SearchInput = styled.input`
 	left: 0;
 	width: 100%;
   height: 100%;
-  font-size: 18px;
+  font-family: 'Kumbh Sans', sans-serif;
   padding-left: ${props => (props.icon ? '50px' : '13px')};
   background-color: ${props => (props.theme === "light" ? white : veryDarkBlue)};
 `;

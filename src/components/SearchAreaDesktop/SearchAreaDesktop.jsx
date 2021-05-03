@@ -23,13 +23,13 @@ class SearchArea extends React.Component {
           <Styled.SearchWrapper theme={theme}>
             <SearchBar theme={theme} icon={searchIcon} placeholder={"Filter by title, companies, expertise…"} />
             <SearchBar theme={theme} icon={locationIcon} placeholder={"Filter by location…"} />
-            <label>
+            <Styled.Label>
               <Checkbox
                 checked={this.state.checked}
                 onChange={this.handleCheckboxChange.bind(this)}
               />
               <span style={{ marginLeft: 8 }}>Full Time Only</span>
-            </label>
+            </Styled.Label>
             <Button label="Search" />
           </Styled.SearchWrapper>
         }
