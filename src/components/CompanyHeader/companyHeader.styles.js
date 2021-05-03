@@ -4,6 +4,7 @@ import { veryDarkBlue } from "../../utils/colors";
 
 export const Wrapper = styled.div`
   position: relative;
+  margin: 38px auto;
   display:flex;
   flex-direction: column;
   border-radius: 3px;
