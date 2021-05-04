@@ -1,18 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as Styled from './button.styles.js'
-import { ThemeContext } from "../../index";
+import { useTheme } from '../../theme/ThemeContext.js'
 
 const Button = ({ primary, label, ...props }) => {
+  const theme = useTheme()
+
   return (
-    <ThemeContext.Consumer>
-      {theme =>
-        <Styled.Button
-          primary={primary}
-          theme={theme}
-        ><b>{label}</b></Styled.Button>
-      }
-    </ThemeContext.Consumer>
+    <Styled.Button
+      primary={primary}
+      theme={theme}
+    ><b>{label}</b></Styled.Button>
   );
 };
 

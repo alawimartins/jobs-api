@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { createGlobalStyle } from "styled-components";
-import { ThemeContext } from "./index";
+import { useTheme } from './theme/ThemeContext.js'
+
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
@@ -31,15 +32,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-class StyledTheme extends Component {
-  render() {
-    return (
-      <ThemeContext.Consumer>
-        {theme => <GlobalStyle {...this.props} theme={theme} />}
-      </ThemeContext.Consumer>
-    );
-  }
+const StyledTheme = ({ props }) => {
+  const theme = useTheme()
+  return (
+    <GlobalStyle {...props} theme={theme} />
+  );
 }
-StyledTheme.contextType = ThemeContext;
 
 export default StyledTheme;

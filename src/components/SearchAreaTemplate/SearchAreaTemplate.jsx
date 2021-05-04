@@ -2,16 +2,14 @@ import React from 'react'
 import SearchAreaDesktop from "../SearchAreaDesktop/SearchAreaDesktop.jsx";
 import SearchAreaMobile from "../SearchAreaMobile/SearchAreaMobile.jsx";
 
-class SearchAreaTemplate extends React.Component {
+const SearchAreaTemplate = () => {
 
-  render() {
-    return (
-      <>
-        <SearchAreaDesktop />
-        <SearchAreaMobile />
-      </>
-    )
-  }
+  return (
+    <>
+      <SearchAreaDesktop />
+      <SearchAreaMobile />
+    </>
+  )
 }
 
 export default SearchAreaTemplate

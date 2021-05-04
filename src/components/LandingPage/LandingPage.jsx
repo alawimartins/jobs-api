@@ -1,34 +1,55 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom";
+import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
 import SearchAreaTemplate from '../SearchAreaTemplate/SearchAreaTemplate.jsx'
 import ContentPreview from '../ContentPreview/ContentPreview.jsx'
 import JobDescription from '../JobDescription/JobDescription.jsx'
 import * as Styled from './landingPage.styles'
 import Button from "../Button/Button.jsx";
-import { ThemeContext } from "../../index";
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch.jsx";
 
-class LandingPage extends React.Component {
-  state = {
-    loading: true,
-  }
+import logo from '../../assets/desktop/logo.svg'
+import styled from "styled-components";
+import { useTheme, useThemeUpdate } from '../../theme/ThemeContext.js'
 
-  async componentDidMount() {
-  }
 
-  render() {
-    return (
-      <ThemeContext.Consumer>
-        {theme =>
-          <div>
-            <div theme={theme}>
-              <SearchAreaTemplate />
-              <ContentPreview />
-            </div>
-          </div>
-        }
-      </ThemeContext.Consumer>
-    )
-  }
+const Elem = styled.div`
+justify-content: space-between;
+display: flex;
+margin-top: 45px;
+padding: 0 5%;
+`;
+
+const LandingPage = () => {
+  const theme = useTheme()
+  const toggleTheme = useThemeUpdate()
+  const [checked, setChecked] = useState(false)
+
+  useEffect(() => {
+    setChecked(!checked)
+  }, [toggleTheme])
+
+
+  return (
+    <>
+      <Elem>
+        <Link style={{ textDecoration: "none" }} to="/">
+          <img src={logo} />
+        </Link>
+        <ToggleSwitch checked={checked} onChange={toggleTheme} />
+      </Elem>
+      <div>
+        <div theme={theme}>
+          <SearchAreaTemplate />
+          <ContentPreview />
+        </div>
+      </div>
+    </>
+  )
 }
 
 

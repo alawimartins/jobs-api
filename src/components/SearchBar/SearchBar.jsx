@@ -1,24 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import * as Styled from './searchBar.styles'
-import { ThemeContext } from "../../index";
+import { useTheme } from '../../theme/ThemeContext.js'
 
 const SearchBar = ({ onChange, icon, placeholder }) => {
-  const onSearchBarChange = (event) => {
-    onChange(event.target.checked)
-  }
-  console.log('icon', icon)
+  const theme = useTheme()
+
   return (
-    <>
-      <ThemeContext.Consumer>
-        {theme =>
-          <Styled.SearchBox>
-            {icon && <Styled.SearchIcon src={icon} />}
-            <Styled.SearchInput theme={theme} type="text" placeholder={placeholder} icon={icon} />
-          </Styled.SearchBox>
-        }
-      </ThemeContext.Consumer>
-    </>
+    <Styled.SearchBox>
+      {icon && <Styled.SearchIcon src={icon} />}
+      <Styled.SearchInput theme={theme} type="text" placeholder={placeholder} icon={icon} />
+    </Styled.SearchBox>
   )
 }
 

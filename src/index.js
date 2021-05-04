@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
@@ -20,74 +19,54 @@ import smHeader from './assets/tablet/bg-pattern-header.svg';
 import lgHeader from './assets/desktop/bg-pattern-header.svg';
 import logo from './assets/desktop/logo.svg'
 
-const theme = "light";
-export const ThemeContext = React.createContext(theme);
+import { ThemeProvider } from './theme/ThemeContext.js'
+
 
 const Wrapper = styled.div`
-  background-repeat: repeat-x;
-  width: 100%;
-  position: absolute;
-  @media ${breakpoint.device.xs}{
-    background-image: url(${xsHeader});
-  }
-  @media ${breakpoint.device.sm}{
-    background-image: url(${smHeader});
-  }
-  @media ${breakpoint.device.lg}{
-    background-image: url(${lgHeader});
-  }
+background-repeat: repeat-x;
+width: 100%;
+position: absolute;
+@media ${breakpoint.device.xs}{
+  background-image: url(${xsHeader});
+}
+@media ${breakpoint.device.sm}{
+  background-image: url(${smHeader});
+}
+@media ${breakpoint.device.lg}{
+  background-image: url(${lgHeader});
+}
 `;
 const Elem = styled.div`
-  justify-content: space-between;
-  display: flex;
-  margin-top: 45px;
-  padding: 0 5%;
+justify-content: space-between;
+display: flex;
+margin-top: 45px;
+padding: 0 5%;
 `;
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      theme: "light",
-      checked: true,
-    };
 
-  }
-  toggleTheme() {
-    this.setState({
-      theme: this.state.theme === "dark" ? "light" : "dark",
-      checked: !this.state.checked,
-    })
-  }
+function App() {
 
-  render() {
-    return (
-      <Router basename='/'>
-        <ThemeContext.Provider value={this.state.theme}>
-          <StyledTheme />
-          <Wrapper>
-            <Elem>
-              <Link style={{ textDecoration: "none" }} to="/">
-                <img src={logo} />
-              </Link>
-              <ToggleSwitch checked={this.state.checked} onChange={this.toggleTheme.bind(this)} />
-            </Elem>
-            <div className="App">
-              <Switch>
-                <Route exact path="/">
-                  <LandingPage />
-                </Route>
-                <Route path="/jobs">
-                  <JobDescriptionPage />
-                </Route>
-              </Switch>
 
-            </div>
-          </Wrapper>
-        </ThemeContext.Provider>
-      </Router>
-    );
-  }
+  return (
+    <Router basename='/'>
+      <ThemeProvider>
+        <StyledTheme />
+        <Wrapper>
+          <div className="App">
+            <Switch>
+              <Route exact path="/">
+                <LandingPage />
+              </Route>
+              <Route path="/jobs">
+                <JobDescriptionPage />
+              </Route>
+            </Switch>
+
+          </div>
+        </Wrapper>
+      </ThemeProvider>
+    </Router>
+  );
 }
 
 const rootElement = document.getElementById("root");
