@@ -16,14 +16,6 @@ import logo from '../../assets/desktop/logo.svg'
 import styled from "styled-components";
 import { useTheme, useThemeUpdate } from '../../theme/ThemeContext.js'
 
-
-const Elem = styled.div`
-justify-content: space-between;
-display: flex;
-margin-top: 45px;
-padding: 0 5%;
-`;
-
 const LandingPage = () => {
   const theme = useTheme()
   const toggleTheme = useThemeUpdate()
@@ -35,20 +27,12 @@ const LandingPage = () => {
 
 
   return (
-    <>
-      <Elem>
-        <Link style={{ textDecoration: "none" }} to="/">
-          <img src={logo} />
-        </Link>
-        <ToggleSwitch checked={checked} onChange={toggleTheme} />
-      </Elem>
-      <div>
-        <div theme={theme}>
-          <SearchAreaTemplate />
-          <ContentPreview />
-        </div>
+    <div>
+      <div theme={theme}>
+        <SearchAreaTemplate />
+        <ContentPreview />
       </div>
-    </>
+    </div>
   )
 }
 

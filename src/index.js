@@ -12,6 +12,7 @@ import JobDescriptionPage from "./components/JobDescriptionPage/JobDescriptionPa
 import ContentPreview from "./components/ContentPreview/ContentPreview.jsx";
 import CompanyHeader from "./components/CompanyHeader/CompanyHeader.jsx";
 import HowToApply from "./components/HowToApply/HowToApply.jsx";
+import Header from "./components/Header/Header.jsx";
 import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import breakpoint from './utils/breakpoints';
 import xsHeader from './assets/mobile/bg-pattern-header.svg';
@@ -52,6 +53,7 @@ function App() {
       <ThemeProvider>
         <StyledTheme />
         <Wrapper>
+          <Header />
           <div className="App">
             <Switch>
               <Route exact path="/">
