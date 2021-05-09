@@ -16,7 +16,7 @@ import logo from '../../assets/desktop/logo.svg'
 import styled from "styled-components";
 import { useTheme, useThemeUpdate } from '../../theme/ThemeContext.js'
 
-const LandingPage = () => {
+const LandingPage = ({ jobs }) => {
   const theme = useTheme()
   const toggleTheme = useThemeUpdate()
   const [checked, setChecked] = useState(false)
@@ -30,7 +30,13 @@ const LandingPage = () => {
     <div>
       <div theme={theme}>
         <SearchAreaTemplate />
-        <ContentPreview />
+        <Styled.Wrapper>
+          {jobs.map(job => {
+            if (job.company_logo !== null) {
+              return <ContentPreview key={job.id} job={job} />
+            }
+          })}
+        </Styled.Wrapper>
       </div>
     </div>
   )

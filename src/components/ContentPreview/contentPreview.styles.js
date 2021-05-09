@@ -24,20 +24,23 @@ export const Wrapper = styled.div`
   }
 `;
 export const Wrapper2 = styled.div`
-  margin: 0 5%;
+  margin: 10px 10px 30px 10px;
 `;
 
 export const ImgLogo = styled.div`
+  background: url(${props => props.imgUrl}) no-repeat center;
+  background-size: cover;
   position: absolute;
   width: 50px;
   height: 50px;
   border-radius: 15px;
   background-color: orange;
   transform: translate(0%, -50%);
-  left: 10%;
+  left: 10px;
+  top: 0%;
   z-index: 1;
   @media ${breakpoint.device.sm}{
-    left: 7%;
+    left: 10px;
   }
 `;
 
