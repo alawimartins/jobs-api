@@ -7,19 +7,14 @@ import {
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import StyledTheme from "./global-style";
-import ToggleSwitch from "./components/ToggleSwitch/ToggleSwitch.jsx";
 import JobDescriptionPage from "./components/JobDescriptionPage/JobDescriptionPage.jsx";
-import ContentPreview from "./components/ContentPreview/ContentPreview.jsx";
-import CompanyHeader from "./components/CompanyHeader/CompanyHeader.jsx";
-import HowToApply from "./components/HowToApply/HowToApply.jsx";
 import Header from "./components/Header/Header.jsx";
 import LandingPage from "./components/LandingPage/LandingPage.jsx";
 import breakpoint from './utils/breakpoints';
 import xsHeader from './assets/mobile/bg-pattern-header.svg';
 import smHeader from './assets/tablet/bg-pattern-header.svg';
 import lgHeader from './assets/desktop/bg-pattern-header.svg';
-import logo from './assets/desktop/logo.svg'
-
+import useFetchJobs from './api/useFetchJobs.js'
 import { ThemeProvider } from './theme/ThemeContext.js'
 
 
@@ -37,16 +32,10 @@ position: absolute;
   background-image: url(${lgHeader});
 }
 `;
-const Elem = styled.div`
-justify-content: space-between;
-display: flex;
-margin-top: 45px;
-padding: 0 5%;
-`;
 
 
 function App() {
-
+  const { jobs, loading, error } = useFetchJobs()
 
   return (
     <Router basename='/'>
@@ -57,7 +46,9 @@ function App() {
           <div className="App">
             <Switch>
               <Route exact path="/">
-                <LandingPage />
+                {loading && <h1>Loading...</h1>}
+                {error && <h1>error...</h1>}
+                {jobs && <LandingPage jobs={jobs} />}
               </Route>
               <Route path="/jobs">
                 <JobDescriptionPage />
