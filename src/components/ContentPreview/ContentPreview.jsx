@@ -8,7 +8,7 @@ const ContentPreview = ({ job }) => {
   const theme = useTheme()
   return (
     <Styled.Wrapper2>
-      <Link style={{ textDecoration: "none" }} to="/jobs">
+      <Link style={{ textDecoration: "none" }} to={`/jobs/${job.id}`}>
         <Styled.Wrapper theme={theme}>
           <Styled.ImgLogo imgUrl={job.company_logo} />
           <div>
