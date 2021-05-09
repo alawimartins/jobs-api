@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route,
 } from "react-router-dom";
@@ -36,29 +36,34 @@ position: absolute;
 
 function App() {
   const { jobs, loading, error } = useFetchJobs()
+  //TODO: logic to add more jobs
+  const loadMore = () => {
+    console.log('I NEED TO GIVE MORE JOBS TO LANDING PAGE')
+  }
 
   return (
-    <Router basename='/'>
+    <HashRouter basename='/'>
       <ThemeProvider>
         <StyledTheme />
         <Wrapper>
+          {/* TODO: add spinner */}
+          {loading && <h1>Loading...</h1>}
+          {error && <h1>error...</h1>}
           <Header />
           <div className="App">
             <Switch>
               <Route exact path="/">
-                {loading && <h1>Loading...</h1>}
-                {error && <h1>error...</h1>}
-                {jobs && <LandingPage jobs={jobs} />}
+                {jobs && <LandingPage jobs={jobs} funcProp={loadMore} />}
               </Route>
-              <Route path="/jobs">
-                <JobDescriptionPage />
+              <Route path="/jobs/:slug">
+                {jobs && <JobDescriptionPage jobs={jobs} />}
+
               </Route>
             </Switch>
-
           </div>
         </Wrapper>
       </ThemeProvider>
-    </Router>
+    </HashRouter>
   );
 }
 
