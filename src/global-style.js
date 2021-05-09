@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
   h2 {
     font-size: 20px;
     margin: 0;
+    color: ${props => (props.theme === "light" ? "black" : "white")}
   }
   h3 {
     font-size: 18px;
