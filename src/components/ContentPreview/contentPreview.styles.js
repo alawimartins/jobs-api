@@ -38,7 +38,6 @@ export const ImgLogo = styled.div`
   transform: translate(0%, -50%);
   left: 10px;
   top: 0%;
-  z-index: 1;
   @media ${breakpoint.device.sm}{
     left: 10px;
   }
