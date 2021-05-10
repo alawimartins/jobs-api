@@ -1,22 +1,22 @@
 import styled, { css } from 'styled-components'
 import { violet, lightViolet, darkGrey, white } from "../../utils/colors";
 
-export const Button = styled.button`
-  background: ${violet};
-  border-radius: 3px;
-  border: none;
-  color: white;
-  margin: 0.5em 1em;
-  padding: 15px 40px;
-  font-family: 'Kumbh Sans',sans-serif;
-  cursor: pointer;
-  :hover { background: ${lightViolet};
-  }
+export const ModalBackground = styled.div`
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 
-  ${props => props.primary && css`
-    background: ${props => (props.theme === "light" ? '#e8eafa' : darkGrey)};
-    color: ${props => (props.theme === "light" ? violet : white)};
-    :hover { background-color: ${props => (props.theme === "light" ? '#D4D7FF' : '#ccc')};
-    }
-  `}
+`;
+
+export const Modal = styled.div`
+width: 300px;
+height: 300px;
+background-color: red;
+z-index: 20;
 `;

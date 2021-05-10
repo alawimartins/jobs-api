@@ -10,16 +10,16 @@ import { useTheme } from '../../theme/ThemeContext.js'
 
 const SearchAreaMobile = () => {
   const theme = useTheme()
-  const [checked, setChecked] = useState(true)
-  const [show, setShow] = useState(false)
+  const [checked, setChecked] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
 
   const handleCheckboxChange = (event) => {
     setChecked(event.target.checked)
   }
 
-  const showModal = (e) => {
-    setShow(!show)
+  const toggleModal = () => {
+    setShowModal(!showModal)
   }
 
 
@@ -27,10 +27,10 @@ const SearchAreaMobile = () => {
     <>
       <Styled.SearchWrapper theme={theme}>
         <SearchBar theme={theme} placeholder={"Filter by title, companies, expertise…"} />
-        <Styled.Button onClick={e => { showModal() }}><img src={theme === 'light' ? filterDarkIcon : filterIcon} /></Styled.Button>
+        <Styled.Button onClick={toggleModal}><img src={theme === 'light' ? filterDarkIcon : filterIcon} /></Styled.Button>
         <Styled.ButtonSearch ><img src={searchIcon} /></Styled.ButtonSearch>
       </Styled.SearchWrapper>
-      {/* <Modal show={this.state.show} /> */}
+      {showModal && <Modal showModal={showModal} setShowModal={setShowModal} />}
     </>
   )
 }
