@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   align-items: center;
   background-color: ${props => (props.theme === "light" ? "white" : veryDarkBlue)};
   padding: 40px 30px 20px 20px;
+  width: 90%;
   @media ${breakpoint.device.sm}{
     flex-direction: row;
     min-height: 140px;
@@ -20,21 +21,9 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Wrapper2 = styled.div`
-  margin: 0 5%;
-`;
-
-export const HeaderAndBtn = styled.div`
-  @media ${breakpoint.device.sm}{
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 40px;
-  }
-`;
-
-export const ImgLogo = styled.div`
+export const CompanyLogo = styled.div`
+  background: url(${props => props.imgUrl}) no-repeat center;
+  background-size: cover;
   position: absolute;
   width: 50px;
   height: 50px;
@@ -52,23 +41,12 @@ export const ImgLogo = styled.div`
   }
 `;
 
-export const SubText = styled.p`
-font-size: 14px;
-color: grey;
-align-items: center;
-justify-content: center;
-display: flex;
-@media ${breakpoint.device.sm} {
-  justify-content: flex-start;
-}
+export const Title = styled.div`
+  @media ${breakpoint.device.sm}{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30px
+  }
 `;
-
-export const Header = styled.h2`
-align-items: center;
-justify-content: center;
-display: flex;
-@media ${breakpoint.device.sm} {
-  justify-content: flex-start;
-}
-`;
-
