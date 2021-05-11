@@ -4,21 +4,20 @@ import * as Styled from './companyHeader.styles'
 import Button from "../Button/Button.jsx";
 import { useTheme } from '../../theme/ThemeContext.js'
 
-const CompanyHeader = () => {
+const CompanyHeader = ({ job }) => {
   const theme = useTheme()
-
   return (
     <Styled.Wrapper2>
       <Styled.Wrapper theme={theme}>
-        <Styled.ImgLogo />
+        <Styled.ImgLogo imgUrl={job.company_logo} />
         <Styled.HeaderAndBtn>
           <div>
-            <Styled.Header>So Digital Inc.</Styled.Header>
-            <Styled.SubText>sodigital.co</Styled.SubText>
+            <Styled.Header>{job.company}</Styled.Header>
+            <Styled.SubText>{job.company}.com</Styled.SubText>
           </div>
-          <div>
+          <Styled.ButtonWrapper>
             <Button primary label="Company Site" />
-          </div>
+          </Styled.ButtonWrapper>
         </Styled.HeaderAndBtn>
       </Styled.Wrapper>
     </Styled.Wrapper2>
