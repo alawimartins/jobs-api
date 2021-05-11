@@ -33,3 +33,7 @@ export const ButtonSearch = styled.button`
   :hover { background: ${lightViolet};
   }
 `;
+
+export const ButtonWrapper = styled.div`
+  margin: auto;
+`;

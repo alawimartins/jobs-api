@@ -27,7 +27,10 @@ const SearchArea = () => {
         />
         <span style={{ marginLeft: 8 }}>Full Time Only</span>
       </Styled.Label>
-      <Button label="Search" />
+      <Styled.ButtonWrapper>
+        <Button label="Search" />
+      </Styled.ButtonWrapper>
+
     </Styled.SearchWrapper>
   )
 }

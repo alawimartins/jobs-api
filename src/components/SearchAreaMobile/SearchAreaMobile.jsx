@@ -28,7 +28,11 @@ const SearchAreaMobile = () => {
       <Styled.SearchWrapper theme={theme}>
         <SearchBar theme={theme} placeholder={"Filter by title, companies, expertise…"} />
         <Styled.Button onClick={toggleModal}><img src={theme === 'light' ? filterDarkIcon : filterIcon} /></Styled.Button>
-        <Styled.ButtonSearch ><img src={searchIcon} /></Styled.ButtonSearch>
+        <Styled.ButtonWrapper>
+          <Styled.ButtonSearch >
+            <img src={searchIcon} />
+          </Styled.ButtonSearch>
+        </Styled.ButtonWrapper>
       </Styled.SearchWrapper>
       {showModal && <Modal showModal={showModal} setShowModal={setShowModal} />}
     </>
