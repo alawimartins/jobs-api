@@ -25,16 +25,12 @@ const JobDescriptionPage = ({ jobs }) => {
   const jobObj = job[0]
 
   return (
-    <div>
-      <div theme={theme}>
-        <CompanyHeader job={jobObj} />
-        <JobDescription job={jobObj} />
-        <HowToApply />
-      </div>
+    <div theme={theme}>
+      <CompanyHeader job={jobObj} />
+      <JobDescription job={jobObj} />
+      <HowToApply />
     </div>
   )
 }
-
-
 
 export default JobDescriptionPage

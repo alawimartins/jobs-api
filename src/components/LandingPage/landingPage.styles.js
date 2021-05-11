@@ -1,9 +1,13 @@
 import styled from 'styled-components'
-import breakpoint from '../../utils/breakpoints';
-import { veryDarkBlue } from "../../utils/colors";
+import Button from '../Button/Button.jsx'
 
 export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 `;
+
+export const StyledButton = styled(Button)`
+  margin: auto;
+  display: block;
+`

@@ -10,18 +10,18 @@ const JobDescription = ({ job }) => {
 
   return (
     <Styled.Wrapper theme={theme}>
-      <Styled.Wrapper2>
+      <Styled.TopSection>
         <Styled.HeaderAndBtn>
           <div>
             <Styled.SubText>{job.created_at} • {job.type}</Styled.SubText>
             <Styled.Header>{job.title}</Styled.Header>
-            <Styled.Link href="https://www.google.com/"><b>{job.type}, {job.location}</b></Styled.Link>
+            <Styled.LocationWrapper><b>{job.type}, {job.location}</b></Styled.LocationWrapper>
           </div>
           <div>
             <Button label="Apply Now" />
           </div>
         </Styled.HeaderAndBtn>
-      </Styled.Wrapper2>
+      </Styled.TopSection>
       <ReactMarkdown>{job.description}</ReactMarkdown>
     </Styled.Wrapper>
   )

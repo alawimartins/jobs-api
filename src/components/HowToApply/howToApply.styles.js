@@ -15,53 +15,14 @@ export const Wrapper = styled.div`
   padding: 10px 20px;
   background-image: url(${xsFooter});
   margin: auto;
+  width: 90%;
+  margin-bottom: 50px;
   @media ${breakpoint.device.sm}{
     background-image: url(${smFooter});
     flex-direction: row;
     min-height: 140px;
-    padding: 20px 30px;
+    padding: 10px 50px;
     width: 730px;
-  }
-`;
-
-export const Wrapper2 = styled.div`
-  margin: 0 5%;
-`;
-
-export const HeaderAndBtn = styled.div`
-  @media ${breakpoint.device.sm}{
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 40px;
-  }
-`;
-
-export const ImgLogo = styled.div`
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 15px;
-  background-color: orange;
-  transform: translate(-50%,-140%);
-  left: 50%;
-  z-index: 1;
-  @media ${breakpoint.device.sm}{
-    transform: translate(0%,0%);
-    position: static;
-    width: 140px;
-    height: 140px;
-    border-radius: 0px;
-  }
-`;
-
-export const SubText = styled.p`
-  color: white;
-  font-size: 14px;
-  display: flex;
-  @media ${breakpoint.device.sm} {
-    justify-content: flex-start;
   }
 `;
 
@@ -70,5 +31,8 @@ export const Header = styled.h3`
   @media ${breakpoint.device.sm} {
     justify-content: flex-start;
 }
+`;
+export const Paragraph = styled.p`
+  color: white;
 `;
 

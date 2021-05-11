@@ -8,9 +8,6 @@ import searchIcon from '../../assets/desktop/icon-search.svg'
 import locationIcon from '../../assets/desktop/icon-location.svg'
 import { useTheme } from '../../theme/ThemeContext.js'
 
-
-
-
 const SearchArea = () => {
   const theme = useTheme()
   const [checked, setChecked] = useState(true)
@@ -33,10 +30,6 @@ const SearchArea = () => {
       <Button label="Search" />
     </Styled.SearchWrapper>
   )
-}
-
-SearchArea.propTypes = {
-  onChange: PropTypes.func
 }
 
 export default SearchArea

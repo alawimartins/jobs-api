@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import {
-  BrowserRouter as Router,
-  Link
-} from "react-router-dom";
 import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
 import SearchAreaTemplate from '../SearchAreaTemplate/SearchAreaTemplate.jsx'
@@ -33,16 +29,14 @@ const LandingPage = ({ jobs, funcProp }) => {
   }
 
   return (
-    <div>
-      <div theme={theme}>
-        <SearchAreaTemplate />
-        <Styled.Wrapper>
-          {currentJobs.map(job => {
-            return <ContentPreview key={job.id} job={job} />
-          })}
-        </Styled.Wrapper>
-      </div>
-      <button onClick={loadMore}>Add</button>
+    <div theme={theme}>
+      <SearchAreaTemplate />
+      <Styled.Wrapper>
+        {currentJobs.map(job => {
+          return <ContentPreview key={job.id} job={job} />
+        })}
+      </Styled.Wrapper>
+      <Styled.StyledButton onClick={loadMore} label="Load More" />
     </div>
   )
 }

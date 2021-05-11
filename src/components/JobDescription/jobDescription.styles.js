@@ -3,25 +3,31 @@ import breakpoint from '../../utils/breakpoints';
 import { veryDarkBlue, violet } from "../../utils/colors";
 
 export const Wrapper = styled.div`
-  position: relative;
-  display:flex;
-  flex-direction: column;
-  border-radius: 3px;
-  min-height: 80px;
-  align-items: center;
-  background-color: ${props => (props.theme === "light" ? "white" : veryDarkBlue)};
-  padding: 40px 30px 20px 20px;
   margin: auto;
+  width: 90%;
+  min-height: 80px;
+  border-radius: 3px;
+  background-color: ${props => (props.theme === "light" ? "white" : veryDarkBlue)};
+  padding: 30px;
+  margin: auto;
+  margin-bottom: 40px;
   @media ${breakpoint.device.sm}{
-    flex-direction: row;
     min-height: 140px;
-    padding: 0px 30px 0px 0px;
     width: 730px;
+    margin-bottom: 40px;
+    padding: 10px 50px;
   }
 `;
 
-export const Wrapper2 = styled.div`
-  margin: 0 5%;
+export const TopSection = styled.div`
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media ${breakpoint.device.sm}{
+    flex-direction: row;
+    min-height: 140px;
+  }
 `;
 
 export const HeaderAndBtn = styled.div`
@@ -30,31 +36,10 @@ export const HeaderAndBtn = styled.div`
     flex: 1;
     align-items: center;
     justify-content: space-between;
-    margin-left: 40px;
-  }
-`;
-
-export const ImgLogo = styled.div`
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 15px;
-  background-color: orange;
-  transform: translate(-50%,-140%);
-  left: 50%;
-  z-index: 1;
-  @media ${breakpoint.device.sm}{
-    transform: translate(0%,0%);
-    position: static;
-    width: 140px;
-    height: 140px;
-    border-radius: 0px;
   }
 `;
 
 export const SubText = styled.p`
-font-size: 14px;
-color: grey;
 align-items: center;
 justify-content: center;
 display: flex;
@@ -72,14 +57,7 @@ display: flex;
 }
 `;
 
-export const Link = styled.a`
-  text-decoration: none;
-  color: inherit;
-  :hover, :focus, :active {
-    text-decoration: none;
-    color: inherit;
-    }
+export const LocationWrapper = styled.p`
   color: ${violet};
-  weight: 700;
 `;
 

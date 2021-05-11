@@ -7,24 +7,20 @@ import { useTheme } from '../../theme/ThemeContext.js'
 const ContentPreview = ({ job }) => {
   const theme = useTheme()
   return (
-    <Styled.Wrapper2>
-      <Link style={{ textDecoration: "none" }} to={`/jobs/${job.id}`}>
-        <Styled.Wrapper theme={theme}>
-          <Styled.ImgLogo imgUrl={job.company_logo} />
-          <div>
-            <Styled.SubText>{job.created_at} • {job.type}</Styled.SubText>
-            <h2>{job.title}</h2>
-            <Styled.SubText>{job.company}</Styled.SubText>
-          </div>
-          <div>
-            <Styled.Link href={job.url}><b>{job.location}</b></Styled.Link>
-          </div>
-        </Styled.Wrapper>
-      </Link>
-    </Styled.Wrapper2>
-
+    <Link style={{ textDecoration: "none" }} to={`/jobs/${job.id}`}>
+      <Styled.Wrapper theme={theme}>
+        <Styled.CompanyLogo imgUrl={job.company_logo} />
+        <div>
+          <p>{job.created_at} • {job.type}</p>
+          <h2>{job.title}</h2>
+          <p>{job.company}</p>
+        </div>
+        <div>
+          <Styled.Link href={job.url}><b>{job.location}</b></Styled.Link>
+        </div>
+      </Styled.Wrapper>
+    </Link>
   )
 }
-
 
 export default ContentPreview
