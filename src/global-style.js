@@ -31,6 +31,10 @@ const GlobalStyle = createGlobalStyle`
   h4 {
     font-size: 14px;
   }
+  p, li {
+    font-size: 14px;
+    color: grey;
+  }
 `;
 
 const StyledTheme = ({ props }) => {
