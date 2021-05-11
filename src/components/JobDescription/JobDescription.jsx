@@ -1,28 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types';
 import * as Styled from './jobDescription.styles'
 import Button from "../Button/Button.jsx";
 import { useTheme } from '../../theme/ThemeContext.js'
+import ReactMarkdown from 'react-markdown'
 
-const JobDescription = () => {
+const JobDescription = ({ job }) => {
   const theme = useTheme()
 
   return (
-    <Styled.Wrapper2>
-      <Styled.Wrapper theme={theme}>
+    <Styled.Wrapper theme={theme}>
+      <Styled.Wrapper2>
         <Styled.HeaderAndBtn>
           <div>
-            <Styled.SubText>5h ago • Full Time</Styled.SubText>
-            <Styled.Header>Senior Software Engineer</Styled.Header>
-            <Styled.Link href="https://www.google.com/"><b>Remote, Seoul, Tokyo, Mountain View, San Fransisco</b></Styled.Link>
+            <Styled.SubText>{job.created_at} • {job.type}</Styled.SubText>
+            <Styled.Header>{job.title}</Styled.Header>
+            <Styled.Link href="https://www.google.com/"><b>{job.type}, {job.location}</b></Styled.Link>
           </div>
           <div>
             <Button label="Apply Now" />
           </div>
         </Styled.HeaderAndBtn>
-        <p>Senior Software Engineer</p>
-      </Styled.Wrapper>
-    </Styled.Wrapper2>
+      </Styled.Wrapper2>
+      <ReactMarkdown>{job.description}</ReactMarkdown>
+    </Styled.Wrapper>
   )
 }
 
